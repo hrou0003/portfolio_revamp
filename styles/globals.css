@@ -1,16 +1,42 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400&family=Libre+Baskerville&display=swap');
+
+html * {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif 
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.underlined-menu {
+  height: 100%;
+  width: 100%;
+  display: fixed;
+  place-items: center left;
+
 }
 
-* {
-  box-sizing: border-box;
-}
+  .wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .menu-item {
+    margin: 0 1.5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .underline {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 15px; 
+    background: white;
+    opacity: 0.85;
+  }
+
