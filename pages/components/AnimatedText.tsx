@@ -1,4 +1,3 @@
-import { LicenseModel } from "aws-cdk-lib/aws-rds";
 import { motion } from "framer-motion";
 
 type Props = {
