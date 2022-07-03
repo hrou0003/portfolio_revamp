@@ -1,8 +1,6 @@
-import { motion } from "framer-motion";
-import AnimatedText from "./AnimatedText";
+// import AnimatedText from "./AnimatedText";
 import Skill from "./Skills/Skill";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaintBrush } from "@fortawesome/free-solid-svg-icons";
 import { faPython, faAws, faJs, faLinux } from "@fortawesome/free-brands-svg-icons";
 
 const Skills = () => {

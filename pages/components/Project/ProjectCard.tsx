@@ -6,7 +6,7 @@ const ProjectCard = () => {
 
         <div className="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
-        <Image className="p-8 rounded-t-lg" src="/docs/images/products/product-1.png" alt="product image" />
+        <Image className="p-8 rounded-t-lg" src="/docs/images/products/product-1.png" layout='fill' alt="product image" />
     </a>
     <div className="px-5 pb-5">
         <a href="#">

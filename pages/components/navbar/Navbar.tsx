@@ -2,7 +2,34 @@ import React, { useState } from 'react';
 
 import { motion, AnimateSharedLayout, useViewportScroll } from 'framer-motion';
 import { Link } from 'react-scroll';
-import MenuItems from './MenuItems';
+
+const MenuItems = [
+  {
+    label: 'Introduction',
+    url: "intro",
+    active: true,
+  },
+  {
+    label: 'Skills',
+    url: "skills",
+    active: true,
+  },
+ {
+    label: 'Experience',
+    url: "experience",
+    active: true,
+  },
+  {
+      label: 'Projects',
+      url: "projects",
+      active: true,
+  },
+  {
+      label: 'Contact',
+      url: "contact",
+      active: true,
+  }
+];
 
 
 type Props = {

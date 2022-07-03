@@ -26,7 +26,7 @@ const Skill: React.FC<Props> = (props) => {
           y1="15"
           x2="90%" 
           y2="15" 
-          stroke-width="30px" 
+          strokeWidth="30px" 
           strokeLinecap="round"
           variants={skillLineVariants}
           initial="hidden"

@@ -13,7 +13,7 @@ const ExperienceCard: React.FC<Props> = (props) => {
         <motion.li whileHover={{ scale: 1.1 }} className="py-3 sm:py-4">
             <div className="flex items-center space-x-4">
                 <div className="flex-shrink-0">
-                    <Image className="w-8 h-8 rounded-full" src="https://media-exp2.licdn.com/dms/image/C560BAQH1Z5EwGQt87A/company-logo_100_100/0/1627856787021?e=1665014400&v=beta&t=b2vTXrvLE1URyCbmPMRCuTgKJChIY-qPnyfNawvy5jc" alt="Neil image" />
+                    {/* <Image layout='fill' className="w-8 h-8 rounded-full" src="https://media-exp2.licdn.com/dms/image/C560BAQH1Z5EwGQt87A/company-logo_100_100/0/1627856787021?e=1665014400&v=beta&t=b2vTXrvLE1URyCbmPMRCuTgKJChIY-qPnyfNawvy5jc" alt="Neil image" /> */}
                 </div>
                 <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
