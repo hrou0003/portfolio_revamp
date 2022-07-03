@@ -5,52 +5,55 @@ type Props = {
     jobTitle: string;
     company: string;
     location: string;
+    description: string;
     date: string;
 }
 
 const ExperienceCard: React.FC<Props> = (props) => {
     return (
-        <motion.li whileHover={{ scale: 1.1 }} className="py-3 sm:py-4">
-            <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0">
-                    {/* <Image layout='fill' className="w-8 h-8 rounded-full" src="https://media-exp2.licdn.com/dms/image/C560BAQH1Z5EwGQt87A/company-logo_100_100/0/1627856787021?e=1665014400&v=beta&t=b2vTXrvLE1URyCbmPMRCuTgKJChIY-qPnyfNawvy5jc" alt="Neil image" /> */}
-                </div>
-                <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                        {props.jobTitle}
-                    </p>
-                    <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                        {props.company}
-                    </p>
-                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        {props.location}
-                    </div>
-                </div>
-
+        <li className="mb-10 ml-4">
+            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{props.date}</time>
+            <div className="flex">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{props.jobTitle},  </h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{props.company}</h3>
             </div>
-            <div className="text-white">
-                Took of visualisation and reporting did lots of other things
-            </div>
-        </motion.li>
+            <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{props.description}</p>
+            <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{props.location}</p>
+        </li>
     )
 }
 
 const ExperienceList = () => {
 
     return (
-        <div className="p-4 m-auto max-w-lg bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <div className="flex justify-between items-center mb-4">
-                <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Job Experience</h5>
-            </div>
-            <div className="flow-root">
-                <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-                    <ExperienceCard jobTitle="Data Analyst" company="Bank of Queensland" location="Melbourne, Victoria, Australia" date="March, 2022 - Present" />
-                    <ExperienceCard jobTitle="Data Analyst" company="Bank of Queensland" location="Melbourne, Victoria, Australia" date="March, 2022 - Present" />
-                    <ExperienceCard jobTitle="Data Analyst" company="Bank of Queensland" location="Melbourne, Victoria, Australia" date="March, 2022 - Present" />
-                </ul>
-            </div>
-        </div>
+        <ol className="relative border-l border-gray-200 dark:border-gray-700">
+            <ExperienceCard
+                jobTitle="Data Analyst"
+                company="Bank of Queensland"
+                location="Melbourne, Australia"
+                description="aasdfsfd asdflj"
+                date="March, 2022 - Present"
+            />
+            <ExperienceCard
+                jobTitle="Data Analyst"
+                company="Bank of Queensland"
+                location="Melbourne, Australia"
+                description="aasdfsfd asdflj"
+                date="March, 2022 - Present"
+            />
+            <ExperienceCard
+                jobTitle="Data Analyst"
+                company="Bank of Queensland"
+                location="Melbourne, Australia"
+                description="aasdfsfd asdflj"
+                date="March, 2022 - Present"
+            />
+        </ol>
     )
 }
+
+
+
 
 export default ExperienceList;

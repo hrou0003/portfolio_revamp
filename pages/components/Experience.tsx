@@ -6,18 +6,16 @@ const Experience = () => {
     return (
         <div id="experience" className="flex w-screen min-h-screen bg-gray-900 p-4">
             <div
-                className="m-auto inline md:space-x-2"
+                className="m-auto grid grid-cols-1 md:grid-cols-2 gap-20"
             >
-                <>
-                    <div className="md:float-left">
-
+                    <div>
+                        <h1 className="text-slate-400 text-2xl mb-4">Education</h1>
                         <ExperienceCard />
                     </div>
-                    <div className="w-2 h-2 md:float-left"></div>
-                    <div className="md:float-left">
+                    <div>
+                        <h1 className="text-slate-400 text-2xl mb-4">Work Experience</h1>
                         <ExperienceCard />
                     </div>
-                </>
             </div>
         </div>
     )

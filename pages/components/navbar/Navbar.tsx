@@ -54,15 +54,24 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick }) => {
     >
       <motion.div
         animate={{ opacity: selected ? 1 : .5 }}
-        className={`text-xs md:text-xl lg:text-3xl ${selected ? 'underline' : ''}`}
-        layoutId="underline"
+        transition={{ duration: 1 }}
+        className="text-xs md:text-xl lg:text-3xl grid grid-cols-2 space-x-40"
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
       >
-        <div className='bg-black h-full w-2'>
-          <div className='h-full w-2'></div>
+        <div>
+        {text}
         </div>
-        {hovered || selected ? text : text.slice(0,3) + '...'} 
+        {selected && (
+          <motion.div
+            layoutId="underline"
+            className=''
+          >
+            <svg height="30" width="4" className="stroke-slate-200">
+              <motion.line x1="0" x2="0" y1="0" y2="50" strokeWidth="8" initial={{ pathLength: 0 }} animate={{ pathLength: 1}} transition={{duration: 0.5}}/>
+            </svg>
+          </motion.div>
+        )}
       </motion.div>
     </Link>
   )
@@ -101,7 +110,7 @@ const Navbar = () => {
 
   return (
     <motion.div
-      className="fixed p-4 opacity-30 mt-auto text-slate-200"
+      className="fixed p-4 opacity-30 mt-40 w-20 text-slate-200"
       /** the variants object needs to be passed into the motion component **/
       variants={variants}
       /** it's right here that we match our boolean state with these variant keys **/
