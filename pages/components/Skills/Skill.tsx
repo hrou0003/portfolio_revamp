@@ -20,7 +20,7 @@ const Skill: React.FC<Props> = (props) => {
         {props.label}
       </div>
       <motion.svg height="50" width="100%" className="stroke-slate-200 stroke-12" >
-        <line x1="15" y1="15" x2="90%" y2="15" stroke-width="30px" className="stroke-slate-500" strokeLinecap="round" />
+        <line x1="15" y1="15" x2="90%" y2="15" strokeWidth="30px" className="stroke-slate-500" strokeLinecap="round" />
         <motion.line
           x1="15"
           y1="15"

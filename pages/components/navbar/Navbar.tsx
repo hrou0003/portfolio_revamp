@@ -42,14 +42,14 @@ const Navbar = () => {
   /** add useState hook to manage state **/
   const [hidden, setHidden] = React.useState(true);
 
-  const { scrollY } = useViewportScroll();
+  const { scrollY, scrollYProgress } = useViewportScroll();
 
   /** this onUpdate function will be called in the `scrollY.onChange` callback **/
   function update() {
-    if (scrollY?.current < scrollY?.prev) {
+    if (scrollY.get() < scrollY.getPrevious()) {
       setHidden(false);
       console.log("visible");
-    } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
+    } else if (scrollY.get() > 100 && scrollY.get() > scrollY.getPrevious()) {
       setHidden(true);
       console.log("hidden");
     }
