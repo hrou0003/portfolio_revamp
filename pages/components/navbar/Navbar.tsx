@@ -54,17 +54,15 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick }) => {
     >
       <motion.div
         animate={{ opacity: selected ? 1 : .5 }}
-        className="text-xs md:text-xl lg:text-3xl"
+        className={`text-xs md:text-xl lg:text-3xl ${selected ? 'underline' : ''}`}
+        layoutId="underline"
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
       >
-        {hovered ? text : text.slice(0,3) + '...'}
-        {selected && (
-          <motion.div
-            className="underline"
-            layoutId="underline"
-          />
-        )}
+        <div className='bg-black h-full w-2'>
+          <div className='h-full w-2'></div>
+        </div>
+        {hovered || selected ? text : text.slice(0,3) + '...'} 
       </motion.div>
     </Link>
   )
