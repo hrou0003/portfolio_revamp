@@ -14,20 +14,20 @@ const MenuItems = [
     url: "skills",
     active: true,
   },
- {
+  {
     label: 'Experience',
     url: "experience",
     active: true,
   },
   {
-      label: 'Projects',
-      url: "projects",
-      active: true,
+    label: 'Projects',
+    url: "projects",
+    active: true,
   },
   {
-      label: 'Contact',
-      url: "contact",
-      active: true,
+    label: 'Contact',
+    url: "contact",
+    active: true,
   }
 ];
 
@@ -39,8 +39,12 @@ type Props = {
   onClick: () => void;
 }
 
-const MenuItem: React.FC<Props> = ({ url, text, selected, onClick }) => (
-  <Link
+const MenuItem: React.FC<Props> = ({ url, text, selected, onClick }) => {
+
+  const [hovered, setHovered] = useState(false)
+
+  return (
+    <Link
       to={url}
       spy={true}
       smooth={true}
@@ -48,21 +52,23 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick }) => (
       onSetActive={onClick}
       className="menu-item text-xs md:text-xl lg:text-3xl"
     >
-  <motion.div
-    animate={{ opacity: selected ? 1 : .5 }}
-    className="text-xs md:text-xl lg:text-3xl"
-  >
-  
-    {text}
-    {selected && (
       <motion.div
-        className="underline"
-        layoutId="underline"
-      />
-    )}
-  </motion.div>
-  </Link>
-)
+        animate={{ opacity: selected ? 1 : .5 }}
+        className="text-xs md:text-xl lg:text-3xl"
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
+      >
+        {hovered ? text : text.slice(0,3) + '...'}
+        {selected && (
+          <motion.div
+            className="underline"
+            layoutId="underline"
+          />
+        )}
+      </motion.div>
+    </Link>
+  )
+}
 
 const Navbar = () => {
   const [selected, setSelected] = useState(0);
@@ -97,29 +103,28 @@ const Navbar = () => {
 
   return (
     <motion.div
-      className="fixed bg-slate-400 p-4 opacity-30 w-full"
+      className="fixed p-4 opacity-30 mt-auto text-slate-200"
       /** the variants object needs to be passed into the motion component **/
       variants={variants}
       /** it's right here that we match our boolean state with these variant keys **/
-      animate={hidden ? "hidden" : "visible"}
-      initial={false}
       whileHover="visible"
       /** I'm also going to add a custom easing curve and duration for the animation **/
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
-      <div className="wrapper">
+      <ul className="wrapper">
         <AnimateSharedLayout>
           {MenuItems.map((el: any, i: number) => (
-            <MenuItem
-              url={el.url}
-              text={el.label}
-              key={i}
-              selected={selected === i}
-              onClick={() => setSelected(i)}
-            />
+            <li>
+              <MenuItem
+                url={el.url}
+                text={el.label}
+                key={i}
+                selected={selected === i}
+                onClick={() => setSelected(i)}
+              /></li>
           ))}
         </AnimateSharedLayout>
-      </div>
+      </ul>
     </motion.div>
   )
 }
