@@ -76,6 +76,7 @@ const Navbar = () => {
       /** it's right here that we match our boolean state with these variant keys **/
       animate={hidden ? "hidden" : "visible"}
       initial={false}
+      whileHover="visible"
       /** I'm also going to add a custom easing curve and duration for the animation **/
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >

@@ -5,14 +5,19 @@ const MenuItems = [
     active: true,
   },
   {
-    label: 'Education & Experience',
-    url: "experience",
+    label: 'Skills',
+    url: "skills",
     active: true,
   },
  {
-    label: 'Skills',
-    url: "skill",
+    label: 'Experience',
+    url: "experience",
     active: true,
+  },
+  {
+      label: 'Projects',
+      url: "projects",
+      active: true,
   },
   {
       label: 'Contact',
