@@ -122,8 +122,7 @@ const Navbar: React.FC<NavProps> = (props) => {
     hidden: { opacity: 0, y: -25 }
   };
 
-  
-  
+
 
   return (
     <motion.div
@@ -136,19 +135,17 @@ const Navbar: React.FC<NavProps> = (props) => {
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
       <ul className="wrapper">
-        <AnimateSharedLayout>
           {MenuItems.map((el: any, i: number) => (
-            <li className="">
+            <li key={i} className="">
               <MenuItem
                 url={el.url}
                 text={el.label}
                 key={i}
                 selected={selected === i}
-                onClick={props.onClick}
+                onClick={() => setSelected(i)}
               />
-              </li>
+            </li>
           ))}
-        </AnimateSharedLayout>
       </ul>
     </motion.div>
   )

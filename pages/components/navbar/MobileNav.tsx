@@ -1,12 +1,16 @@
 import { faBars, faCross, faHamburger, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { motion } from "framer-motion";
 
 const MobileNav = () => {
 
     const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        console.log(open)
+    })
 
     const variants = {
         visible: { opacity: 1 },
@@ -15,13 +19,14 @@ const MobileNav = () => {
 
     const onClick = () => {
         setOpen(false)
-        console.log(`it's up here ${open}`)
     }
 
     return (
         <div>
-            <div className="fixed ml-96 float-right z-30" onClick={() => setOpen(!open)}>
+            <div className="text-white">
                 {open}
+            </div>
+            <div className="fixed ml-96 float-right z-30" onClick={() => setOpen(!open)}>
                 {open ? <FontAwesomeIcon icon={faXmark} fontSize="1.5rem" color="white" /> : <FontAwesomeIcon icon={faBars} fontSize="1.5rem" color="white" />}
             </div>
             {open ?
