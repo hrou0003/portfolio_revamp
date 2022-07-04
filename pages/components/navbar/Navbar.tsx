@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 import { motion, AnimateSharedLayout, useViewportScroll } from 'framer-motion';
 import { Link } from 'react-scroll';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronCircleLeft, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { CfnSiteToSiteVpnAttachment } from 'aws-cdk-lib/aws-networkmanager';
 
 const MenuItems = [
   {
@@ -44,40 +47,46 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick }) => {
   const [hovered, setHovered] = useState(false)
 
   return (
-    <Link
-      to={url}
-      spy={true}
-      smooth={true}
-      duration={500}
-      onSetActive={onClick}
-      className="menu-item text-xs md:text-xl lg:text-3xl"
-    >
-      <motion.div
-        animate={{ opacity: selected ? 1 : .5 }}
-        transition={{ duration: 1 }}
-        className="text-xs md:text-xl lg:text-3xl grid grid-cols-2 space-x-40"
-        onHoverStart={() => setHovered(true)}
-        onHoverEnd={() => setHovered(false)}
+    <div className='inline-flex'>
+      <Link
+        to={url}
+        spy={true}
+        smooth={true}
+        duration={500}
+        onSetActive={onClick}
+        className="menu-item text-xl lg:text-3xl w-full"
       >
-        <div>
-        {text}
-        </div>
-        {selected && (
-          <motion.div
-            layoutId="underline"
-            className=''
-          >
-            <svg height="30" width="4" className="stroke-slate-200">
+        <motion.div
+          animate={{ opacity: selected ? 1 : .5 }}
+          transition={{ duration: 1 }}
+          className="text-xl lg:text-3xl"
+          onHoverStart={() => setHovered(true)}
+          onHoverEnd={() => setHovered(false)}
+        >
+          {text}
+        </motion.div>
+
+      </Link>
+      {selected && (
+        <motion.div
+          layoutId="underline" className="float-right pl-4 mt-1">
+          <FontAwesomeIcon icon={faChevronLeft} className="md:text-xl lg:text-3xl" color="white" />
+          {/* <svg width="4" className="stroke-slate-200 h-8">
               <motion.line x1="0" x2="0" y1="0" y2="50" strokeWidth="8" initial={{ pathLength: 0 }} animate={{ pathLength: 1}} transition={{duration: 0.5}}/>
-            </svg>
-          </motion.div>
-        )}
-      </motion.div>
-    </Link>
+            </svg> */}
+        </motion.div>
+      )}
+    </div>
   )
 }
 
-const Navbar = () => {
+type NavProps = {
+  mobile: boolean;
+  open?: boolean;
+  onClick?: () => void;
+}
+
+const Navbar: React.FC<NavProps> = (props) => {
   const [selected, setSelected] = useState(0);
   /** add useState hook to manage state **/
   const [hidden, setHidden] = React.useState(true);
@@ -95,6 +104,11 @@ const Navbar = () => {
     }
   }
 
+
+  let mainClass = props.mobile ?
+    "p-4 opacity-30 mt-40 text-slate-200 z-30 m-auto" :
+    "fixed p-4 opacity-30 mt-40 text-slate-200 z-10"
+
   /** update the onChange callback to call for `update()` **/
   React.useEffect(() => {
     return scrollY.onChange(() => update());
@@ -108,9 +122,12 @@ const Navbar = () => {
     hidden: { opacity: 0, y: -25 }
   };
 
+  
+  
+
   return (
     <motion.div
-      className="fixed p-4 opacity-30 mt-40 w-20 text-slate-200"
+      className={mainClass}
       /** the variants object needs to be passed into the motion component **/
       variants={variants}
       /** it's right here that we match our boolean state with these variant keys **/
@@ -121,14 +138,15 @@ const Navbar = () => {
       <ul className="wrapper">
         <AnimateSharedLayout>
           {MenuItems.map((el: any, i: number) => (
-            <li>
+            <li className="">
               <MenuItem
                 url={el.url}
                 text={el.label}
                 key={i}
                 selected={selected === i}
-                onClick={() => setSelected(i)}
-              /></li>
+                onClick={props.onClick}
+              />
+              </li>
           ))}
         </AnimateSharedLayout>
       </ul>

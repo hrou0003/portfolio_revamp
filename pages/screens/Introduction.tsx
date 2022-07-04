@@ -8,7 +8,7 @@ const Introduction = () => {
             <h1 className="text-6xl text-slate-200 mb-6">
                  Hi, my name is Harrison 
             </h1>
-                <p className="text-slate-400 text-3xl w-2/3 mx-auto">
+                <p className="text-slate-400 text-lg md:text-3xl w-2/3 mx-auto">
                     I&apos;m a recent graduated in applied mathematics and computer science from Monash University currently working at Bank of Queensland as a Data Analyst. I am looking to move into the field of software engineering.
                 </p>
             </div>
