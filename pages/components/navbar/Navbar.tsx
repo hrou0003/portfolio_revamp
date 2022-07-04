@@ -1,10 +1,9 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-import { motion, AnimateSharedLayout, useViewportScroll } from 'framer-motion';
+import { motion,  useViewportScroll } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleLeft, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { CfnSiteToSiteVpnAttachment } from 'aws-cdk-lib/aws-networkmanager';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 const MenuItems = [
   {
