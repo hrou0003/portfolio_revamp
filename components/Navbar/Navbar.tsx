@@ -47,7 +47,7 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick, setClosed }) 
   const [hovered, setHovered] = useState(false)
 
   return (
-    <div className='inline-flex'>
+    <div className='inline-flex' >
       <Link
         to={url}
         spy={true}
@@ -107,7 +107,7 @@ const Navbar: React.FC<NavProps> = (props) => {
 
 
   let mainClass = props.mobile ?
-    "p-4 opacity-30 mt-40 text-slate-200 z-30 m-auto" :
+    "p-4 my-auto opacity-30 text-slate-200 z-30 text-right" :
     "fixed p-4 opacity-30 mt-40 text-slate-200 z-10"
 
   /** update the onChange callback to call for `update()` **/
@@ -136,18 +136,18 @@ const Navbar: React.FC<NavProps> = (props) => {
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
       <ul className="wrapper">
-          {MenuItems.map((el: any, i: number) => (
-            <li key={i} className="">
-              <MenuItem
-                url={el.url}
-                text={el.label}
-                key={i}
-                selected={selected === i}
-                onClick={() => setSelected(i)}
-                setClosed={() => props.onClick && props.onClick()}
-              />
-            </li>
-          ))}
+        {MenuItems.map((el: any, i: number) => (
+          <li key={i} className="">
+            <MenuItem
+              url={el.url}
+              text={el.label}
+              key={i}
+              selected={selected === i}
+              onClick={() => setSelected(i)}
+              setClosed={() => props.onClick && props.onClick()}
+            />
+          </li>
+        ))}
       </ul>
     </motion.div>
   )
