@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import Introduction from "./screens/Introduction";
 import About from './screens/About';
-import Navbar from './components/navbar/Navbar';
-import Skills from './components/Skills';
-import Projects from './Projects';
-import Experience from './components/Experience';
-import MobileNav from './components/navbar/MobileNav';
+import Navbar from './components/Navbar/Navbar';
+import Skills from './screens/Skills';
+import Projects from './screens/Projects';
+import Experience from './screens/Experience';
+import MobileNav from './components/Navbar/MobileNav';
 
 const Home: NextPage = () => {
   return (
