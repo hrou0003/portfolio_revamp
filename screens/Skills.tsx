@@ -1,7 +1,7 @@
 // import AnimatedText from "./AnimatedText";
-import Skill from "./Skills/Skill";
+import Skill from "../components/Skill";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPython, faAws, faJs, faLinux } from "@fortawesome/free-brands-svg-icons";
+import { faPython, faAws, faJs, faLinux, faGolang, faGit } from "@fortawesome/free-brands-svg-icons";
 
 const Skills = () => {
 
@@ -12,9 +12,10 @@ const Skills = () => {
                 <div className="m-auto">
                     <Skill width={0.9} label={<FontAwesomeIcon icon={faPython} fontSize="1.5rem" color="white" />} />
                     <Skill width={0.7} label={<FontAwesomeIcon icon={faJs} fontSize="1.5rem" color="white" />} />
-                    <Skill width={0.6} label={<FontAwesomeIcon icon={faAws} fontSize="1.5rem" color="white" />} />
-                    <Skill width={0.6} label={<FontAwesomeIcon icon={faAws} fontSize="1.5rem" color="white" />} />
+                    <Skill width={0.55} label={<FontAwesomeIcon icon={faAws} fontSize="1.5rem" color="white" />} />
+                    <Skill width={0.6} label={<FontAwesomeIcon icon={faGit} fontSize="1.5rem" color="white" />} />
                     <Skill width={0.85} label={<FontAwesomeIcon icon={faLinux} fontSize="1.5rem" color="white" />} />
+                    <Skill width={0.45} label={<FontAwesomeIcon icon={faGolang} fontSize="1.5rem" color="white" />} />
                 </div></div>
         </div>
     )
