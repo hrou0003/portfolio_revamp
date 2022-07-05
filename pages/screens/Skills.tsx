@@ -1,5 +1,5 @@
 // import AnimatedText from "./AnimatedText";
-import Skill from "../components/Skill";
+import Skill from "../../components/Skill";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPython, faAws, faJs, faLinux } from "@fortawesome/free-brands-svg-icons";
 
