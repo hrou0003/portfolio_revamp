@@ -39,9 +39,10 @@ type Props = {
   text: string;
   selected: boolean;
   onClick: () => void;
+  setClosed: () => void;
 }
 
-const MenuItem: React.FC<Props> = ({ url, text, selected, onClick }) => {
+const MenuItem: React.FC<Props> = ({ url, text, selected, onClick, setClosed }) => {
 
   const [hovered, setHovered] = useState(false)
 
@@ -53,6 +54,7 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick }) => {
         smooth={true}
         duration={500}
         onSetActive={onClick}
+        onClick={setClosed}
         className="menu-item text-xl lg:text-3xl w-full"
       >
         <motion.div
@@ -142,6 +144,7 @@ const Navbar: React.FC<NavProps> = (props) => {
                 key={i}
                 selected={selected === i}
                 onClick={() => setSelected(i)}
+                setClosed={() => props.onClick && props.onClick()}
               />
             </li>
           ))}
