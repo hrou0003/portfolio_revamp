@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
-import Introduction from "../screens/Introduction";
+import Introduction from "./screens/Introduction";
 import Navbar from '../components/Navbar/Navbar';
-import Skills from '../screens/Skills';
-import Projects from '../screens/Projects';
-import Experience from '../screens/Experience';
+import Skills from './screens/Skills';
+import Projects from './screens/Projects';
+import Experience from './screens/Experience';
 import MobileNav from '../components/Navbar/MobileNav';
 
 const Home: NextPage = () => {
