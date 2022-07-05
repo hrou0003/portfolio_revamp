@@ -1,4 +1,4 @@
-import { faBars, faCross, faHamburger, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark, faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
@@ -26,11 +26,15 @@ const MobileNav = () => {
       <div className="text-white">
         {open}
       </div>
-      <div className="fixed ml-96 float-right z-30" onClick={() => setOpen(!open)}>
-        {open ? <FontAwesomeIcon icon={faXmark} fontSize="1.5rem" color="white" /> : <FontAwesomeIcon icon={faBars} fontSize="1.5rem" color="white" />}
+      <div className="fixed ml-[95vw] mt-[35vh] z-30" onClick={() => setOpen(!open)}>
+        {open ? <FontAwesomeIcon icon={faXmark} fontSize="1.5rem" color="white" /> : <FontAwesomeIcon icon={faEllipsisVertical} fontSize="1.5rem" color="white" />}
       </div>
-      <AnimatePresence>
+      <AnimatePresence
+        initial={false}
+        exitBeforeEnter={true}
+      >
         {open ?
+
           <motion.div
             key="modal"
             variants={variants}
@@ -38,13 +42,14 @@ const MobileNav = () => {
             initial="hidden"
             exit="hidden"
             className="fixed z-10 w-screen h-screen bg-slate-700">
-            <div className="z-30 m-auto rounded-md bg-slate-700 p-4">
+            <div className="z-30 mt-[30vh] rounded-md bg-slate-700 p-4 pr-10">
               <Navbar mobile={true} onClick={onClick} open={open} />
             </div>
-          </motion.div> :
+          </motion.div>
+          :
           <></>
         }
-      </AnimatePresence>
+        </AnimatePresence>
     </div>
   )
 }

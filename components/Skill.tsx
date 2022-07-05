@@ -15,7 +15,7 @@ const Skill: React.FC<Props> = (props) => {
     hidden: { pathLength: 0 }
   }
   return (
-    <motion.div className="flex text-center max-w-9/10 px-2" whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}>
+    <motion.div className="flex text-center max-w-9/10 px-5" whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}>
       <div className="pr-4 py-1">
         {props.label}
       </div>

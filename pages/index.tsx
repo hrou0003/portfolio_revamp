@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <div className='hidden md:block'>
-        <Navbar mobile={false}/>
+        <Navbar mobile={false} />
       </div>
       <div className='md:hidden'>
         <MobileNav />
