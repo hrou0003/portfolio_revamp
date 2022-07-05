@@ -1,4 +1,4 @@
-import { faBars, faCross, faHamburger, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faEllipsisVertical, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
@@ -26,8 +26,8 @@ const MobileNav = () => {
             <div className="text-white">
                 {open}
             </div>
-            <div className="fixed ml-[95vw] mt-[35vh] z-30" onClick={() => setOpen(!open)}>
-                {open ? <FontAwesomeIcon icon={faXmark} fontSize="1.5rem" color="white" /> : <FontAwesomeIcon icon={faBars} fontSize="1.5rem" color="white" />}
+            <div className="fixed ml-[93vw] mt-[35vh] z-30" onClick={() => setOpen(!open)}>
+                {open ? <FontAwesomeIcon icon={faXmark} fontSize="1.5rem" color="white" /> : <FontAwesomeIcon icon={faEllipsisVertical} fontSize="1.5rem" color="white" />}
             </div>
             <AnimatePresence>
             {open ?

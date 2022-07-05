@@ -60,7 +60,7 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick, setClosed }) 
         <motion.div
           animate={{ opacity: selected ? 1 : .5 }}
           transition={{ duration: 1 }}
-          className="text-xl lg:text-3xl"
+          className="text-2xl lg:text-3xl"
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
         >
@@ -71,7 +71,7 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick, setClosed }) 
       {selected && (
         <motion.div
           layoutId="underline" className="float-right pl-4 mt-1">
-          <FontAwesomeIcon icon={faChevronLeft} className="md:text-xl lg:text-3xl" color="white" />
+          <FontAwesomeIcon icon={faChevronLeft} className="text-2xl md:text-xl lg:text-3xl" color="white" />
           {/* <svg width="4" className="stroke-slate-200 h-8">
               <motion.line x1="0" x2="0" y1="0" y2="50" strokeWidth="8" initial={{ pathLength: 0 }} animate={{ pathLength: 1}} transition={{duration: 0.5}}/>
             </svg> */}
