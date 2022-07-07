@@ -26,7 +26,7 @@ const MobileNav = () => {
             <div className="text-white">
                 {open}
             </div>
-            <div className="fixed ml-[93vw] mt-[35vh] z-30" onClick={() => setOpen(!open)}>
+            <div className="fixed ml-[93vw] mt-[35vh] z-30 p-3" onClick={() => setOpen(!open)}>
                 {open ? <FontAwesomeIcon icon={faXmark} fontSize="1.5rem" color="white" /> : <FontAwesomeIcon icon={faEllipsisVertical} fontSize="1.5rem" color="white" />}
             </div>
             <AnimatePresence>

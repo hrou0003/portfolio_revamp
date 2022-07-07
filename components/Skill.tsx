@@ -19,14 +19,13 @@ const Skill: React.FC<Props> = (props) => {
       <div className="pr-4 py-1">
         {props.label}
       </div>
-      <motion.svg height="50" width="100%" className="stroke-slate-200 stroke-12" >
-        <line x1="15" y1="15" x2="90%" y2="15" strokeWidth="30px" className="stroke-slate-500" strokeLinecap="round" />
+      <motion.svg height="50" width="100%" className="stroke-slate-200 stroke" >
+        <line x1="15" y1="15" x2="90%" y2="15"className="stroke-slate-500" strokeLinecap="round" />
         <motion.line
           x1="15"
           y1="15"
           x2="90%" 
           y2="15" 
-          strokeWidth="30px" 
           strokeLinecap="round"
           variants={skillLineVariants}
           initial="hidden"
