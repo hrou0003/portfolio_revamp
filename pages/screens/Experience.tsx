@@ -1,5 +1,5 @@
 import ExperienceCard from "../../components/ExperienceCard";
-import { JobExperience, Education } from "../../public/Experience";
+import { JobExperience, Education } from "../../components/Experience";
 
 
 
