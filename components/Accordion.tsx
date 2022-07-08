@@ -34,7 +34,7 @@ const Accordion: React.FC<Props> = ({ i, expanded, setExpanded, children }) => {
               collapsed: { opacity: 1, height: 0 }
             }}
             transition={{ duration: 0.8}}
-            className="max-w-[60vw] m-auto shadow-lg opacity-25 overflow-clip"
+            className="max-w-[60vw] m-auto opacity-25 overflow-clip"
           >
             {children}
           </motion.section>

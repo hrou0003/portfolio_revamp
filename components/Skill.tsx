@@ -6,7 +6,7 @@ type Props = {
   label: JSX.Element;
   i: number;
   expanded: number | false;
-  setExpanded: (arg0: number | false ) => void;
+  setExpanded: (arg0: number | false) => void;
 };
 
 const Skill: React.FC<Props> = (props) => {
@@ -48,22 +48,23 @@ const Skill: React.FC<Props> = (props) => {
             initial="hidden"
             whileInView="visible"
             className="stroke-[10px] lg:stroke-[30px]"
-            viewport={{ once: true}}
+            viewport={{ once: true }}
           />
         </motion.svg>
       </motion.div>
 
-    <Accordion i={props.i} expanded={props.expanded} setExpanded={props.setExpanded}>
-      <div className="rounded-md bg-slate-200 p-10">
-        Testing
-        Testing
-        Testing
-        Testing
-        Testing
-        Testing
-        Testing
-      </div>
-    </Accordion>
+      <Accordion
+        i={props.i}
+        expanded={props.expanded}
+        setExpanded={props.setExpanded}
+      >
+        <div>
+          <div className="rounded-md bg-slate-200 p-4 shadow-md">
+            Testing Testing Testing Testing Testing Testing Testing
+          </div>
+          <div className="opacity-100 h-5 shadow-none"></div>
+        </div>
+      </Accordion>
     </div>
   );
 };
