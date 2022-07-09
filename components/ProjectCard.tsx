@@ -2,55 +2,76 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 type Props = {
-    jobTitle: string;
-    company: string;
-    location: string;
-    date: string;
-}
+  jobTitle: string;
+  company: string;
+  location: string;
+  date: string;
+};
 
 const ProjectCard: React.FC<Props> = (props) => {
-    return (
-        <motion.li whileHover={{ scale: 1.1 }} className="py-3 sm:py-4">
-            <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0">
-                    {/* <Image layout='fill' className="w-8 h-8 rounded-full" src="https://media-exp2.licdn.com/dms/image/C560BAQH1Z5EwGQt87A/company-logo_100_100/0/1627856787021?e=1665014400&v=beta&t=b2vTXrvLE1URyCbmPMRCuTgKJChIY-qPnyfNawvy5jc" alt="Neil image" /> */}
-                </div>
-                <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                        {props.jobTitle}
-                    </p>
-                    <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                        {props.company}
-                    </p>
-                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        {props.location}
-                    </div>
-                </div>
-
-            </div>
-            <div className="text-white">
-                Took of visualisation and reporting did lots of other things
-            </div>
-        </motion.li>
-    )
-}
+  return (
+    <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <a href="#">
+      </a>
+      <div className="p-5">
+        <a href="#">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Noteworthy technology acquisitions 2021
+          </h5>
+        </a>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          Here are the biggest enterprise technology acquisitions of 2021 so
+          far, in reverse chronological order.
+        </p>
+        <a
+          href="#"
+          className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Read more
+          <svg
+            className="ml-2 -mr-1 w-4 h-4"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  );
+};
 
 const ProjectList = () => {
-
-    return (
-        <div className="p-4 m-auto max-w-lg bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <div className="flex justify-between items-center mb-4">
-                <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Job Experience</h5>
-            </div>
-            <div className="flow-root">
-                <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-                    <ProjectCard jobTitle="Data Analyst" company="Bank of Queensland" location="Melbourne, Victoria, Australia" date="March, 2022 - Present" />
-                    <ProjectCard jobTitle="Data Analyst" company="Bank of Queensland" location="Melbourne, Victoria, Australia" date="March, 2022 - Present" />
-                    <ProjectCard jobTitle="Data Analyst" company="Bank of Queensland" location="Melbourne, Victoria, Australia" date="March, 2022 - Present" />
-                </ul>
-            </div>
-        </div>
-    )
-}
+  return (
+<div>
+        <ul
+          role="list"
+          className="divide-y divide-gray-200 dark:divide-gray-700"
+        >
+          <ProjectCard
+            jobTitle="Data Analyst"
+            company="Bank of Queensland"
+            location="Melbourne, Victoria, Australia"
+            date="March, 2022 - Present"
+          />
+          <ProjectCard
+            jobTitle="Data Analyst"
+            company="Bank of Queensland"
+            location="Melbourne, Victoria, Australia"
+            date="March, 2022 - Present"
+          />
+          <ProjectCard
+            jobTitle="Data Analyst"
+            company="Bank of Queensland"
+            location="Melbourne, Victoria, Australia"
+            date="March, 2022 - Present"
+          />
+        </ul>
+    </div>
+  );
+};
 
 export default ProjectList;

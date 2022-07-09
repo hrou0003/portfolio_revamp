@@ -4,6 +4,7 @@ import { motion,  useViewportScroll } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import TextHighlight from '../TextHighlight';
 
 const MenuItems = [
   {
@@ -64,7 +65,9 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick, setClosed }) 
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
         >
-          {text}
+          <TextHighlight>
+            {text}
+          </TextHighlight>
         </motion.div>
 
       </Link>

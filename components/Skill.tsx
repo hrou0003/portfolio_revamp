@@ -59,7 +59,7 @@ const Skill: React.FC<Props> = (props) => {
         setExpanded={props.setExpanded}
       >
         <div>
-          <div className="rounded-md bg-slate-200 p-4 shadow-md">
+          <div className="rounded-md p-4 text-slate-200 text-center">
             Testing Testing Testing Testing Testing Testing Testing
           </div>
           <div className="opacity-100 h-5 shadow-none"></div>
