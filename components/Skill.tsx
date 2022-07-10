@@ -21,7 +21,6 @@ const Skill: React.FC<Props> = (props) => {
     <div className="content-center">
       <motion.div
         className="flex text-center max-w-[90vw] m-auto px-5"
-        whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
         onClick={() => props.setExpanded(isOpen ? false : props.i)}
       >
         <div className="pr-4 py-1">{props.label}</div>

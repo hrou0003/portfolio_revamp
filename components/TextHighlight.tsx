@@ -6,40 +6,47 @@ type Props = {
   color?: string;
   angle?: number;
   children?: JSX.Element | string;
+  inView?: boolean;
 };
 
 
-const TextHighlight: React.FC<Props> = ({ children }) => {
+const TextHighlight: React.FC<Props> = ({ children, inView }) => {
   const [hovered, setHovered] = useState(false);
 
   let [color, angle] = generateTextAtribs();
 
   const variants = {
     hover: {
-      rotate: 2,
+      rotate: angle,
       backgroundColor: color,
+      text: "white"
     },
+    initial: {
+      backgroundColor: color,
+    }
     
   };
 
 
   return (
     <div
-      className="inline-block"
+      className={`inline-block ${inView ? "mt-2" : ''}`}
       onMouseLeave={() => setHovered(false)}
       onMouseEnter={() => setHovered(true)}
+      onMouseDown={() => setHovered(true)}
     >
     <AnimatePresence>
       <motion.div
-        className={`z-30 absolute mt-[-8px] ml-[-8px] text-transparent hover:text-white hover:underline p-2 m-[-2px] overflow-clip`}
+        layoutId="textHighlight"
+        className={`z-5 absolute mt-[-8px] ml-[-8px] p-1 text-white m-[-2px] overflow-clip`}
         variants={variants}
         whileHover="hover"
-        initial={{ rotate: angle }}
+        whileInView={inView ? "hover" : ""}
       >
         {children}
       </motion.div>
     </AnimatePresence>
-      <span className={hovered ? 'text-transparent' : ''}>{children}</span>
+      <span className="text-transparent">{children}</span>
     </div>
   );
 };

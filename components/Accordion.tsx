@@ -33,7 +33,7 @@ const Accordion: React.FC<Props> = ({ i, expanded, setExpanded, children }) => {
               open: { opacity: 1, height: "auto" },
               collapsed: { opacity: 1, height: 0 }
             }}
-            transition={{ duration: 0.8}}
+            transition={{ duration: 0.2}}
             className="max-w-[60vw] m-auto opacity-25 overflow-clip"
           >
             {children}

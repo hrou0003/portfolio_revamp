@@ -65,13 +65,13 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick, setClosed }) 
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
         >
-          <TextHighlight>
+          <TextHighlight inView={selected ? true : false}>
             {text}
           </TextHighlight>
         </motion.div>
 
       </Link>
-      {selected && (
+      {false && (
         <motion.div
           layoutId="underline" className="float-right pl-4 mt-1">
           <FontAwesomeIcon icon={faChevronLeft} className="text-2xl md:text-xl lg:text-3xl" color="white" />
@@ -140,7 +140,7 @@ const Navbar: React.FC<NavProps> = (props) => {
     >
       <ul className="wrapper">
         {MenuItems.map((el: any, i: number) => (
-          <li key={i} className="">
+          <li key={i} className="my-3">
             <MenuItem
               url={el.url}
               text={el.label}

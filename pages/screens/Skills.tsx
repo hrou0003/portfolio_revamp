@@ -3,6 +3,7 @@ import Skill from "../../components/Skill";
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPython, faAws, faJs, faLinux, faGolang, faGit } from "@fortawesome/free-brands-svg-icons";
+import TextHighlight from "../../components/TextHighlight";
 
 const Skills: React.FC = () => {
 
@@ -11,7 +12,7 @@ const Skills: React.FC = () => {
     return (
         <div id="skills" className="flex w-screen min-h-screen bg-gray-600">
             <div className="h-fit m-auto space-y-4 md:w-1/2">
-                <div className="text-slate-400 text-3xl mx-auto p-5 text-center">I have over 5 years of software development experience</div>
+                <div className="text-slate-400 text-3xl mx-auto p-5 text-center">I have over <TextHighlight inView={true}>5 years</TextHighlight> of software development experience</div>
                 <div className="m-auto">
                     <Skill width={0.9} i={1} expanded={expanded} setExpanded={setExpanded} label={<FontAwesomeIcon icon={faPython} fontSize="1.5rem" color="white" />} />
                     <Skill width={0.7} i={2} expanded={expanded} setExpanded={setExpanded} label={<FontAwesomeIcon icon={faJs} fontSize="1.5rem" color="white" />} />

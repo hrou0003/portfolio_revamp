@@ -9,10 +9,10 @@ import MobileNav from '../components/Navbar/MobileNav';
 const Home: NextPage = () => {
   return (
     <div>
-      <div className='hidden md:block'>
+      <div className='hidden lg:block'>
         <Navbar mobile={false} />
       </div>
-      <div className='md:hidden'>
+      <div className='lg:hidden'>
         <MobileNav />
       </div>
       <Introduction />
