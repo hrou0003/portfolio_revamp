@@ -10,7 +10,7 @@ type Props = {
 
 const ProjectCard: React.FC<Props> = (props) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-sm image-lg hover:image-xl ">
+    <div className="card bg-base-100 shadow-sm image-lg hover:image-xl ">
       <figure>
       </figure>
       <div className="card-body">

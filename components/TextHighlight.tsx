@@ -30,18 +30,16 @@ const TextHighlight: React.FC<Props> = ({ children, inView }) => {
 
   return (
     <div
-      className={`inline-block ${inView ? "mt-2" : ''}`}
+      className={`inline-block ${inView ? "mt-2 mx-1" : ''}`}
       onMouseLeave={() => setHovered(false)}
       onMouseEnter={() => setHovered(true)}
-      onMouseDown={() => setHovered(true)}
     >
     <AnimatePresence>
       <motion.div
-        layoutId="textHighlight"
-        className={`z-5 absolute mt-[-8px] ml-[-8px] p-1 text-white m-[-2px] overflow-clip`}
+        className={`z-5 absolute mt-[-8px] ml-[-8px] p-1 text-white m-[-2px]`}
         variants={variants}
         whileHover="hover"
-        whileInView={inView ? "hover" : ""}
+        animate={inView ? "hover" : ""}
       >
         {children}
       </motion.div>

@@ -66,7 +66,9 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick, setClosed }) 
           onHoverEnd={() => setHovered(false)}
         >
           <TextHighlight inView={selected ? true : false}>
-            {text}
+            <span className='z-30'>
+              {text}
+            </span>
           </TextHighlight>
         </motion.div>
 

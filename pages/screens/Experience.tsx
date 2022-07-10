@@ -11,13 +11,13 @@ const Experience = () => {
       <div className="m-auto max-w-[60vw] grid grid-cols-1 md:grid-cols-2 md:gap-20">
         <div>
           <h1 className="text-slate-400 text-2xl pb-2">
-            <TextHighlight>Work Experience</TextHighlight>
+            <TextHighlight inView={true}>Work Experience</TextHighlight>
           </h1>
           <ExperienceCard experiences={JobExperience} />
         </div>
         <div>
           <h1 className="text-slate-400 text-2xl pb-2">
-            <TextHighlight>Education</TextHighlight>
+            <TextHighlight inView={true}>Education</TextHighlight>
           </h1>
           <ExperienceCard experiences={Education} />
         </div>
