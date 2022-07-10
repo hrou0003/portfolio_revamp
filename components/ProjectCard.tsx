@@ -12,7 +12,6 @@ const ProjectCard: React.FC<Props> = (props) => {
   return (
     <div className="card w-96 bg-base-100 shadow-sm image-lg hover:image-xl ">
       <figure>
-        <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">Shoes!</h2>
