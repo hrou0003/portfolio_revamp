@@ -27,11 +27,7 @@ const MenuItems = [
     url: "projects",
     active: true,
   },
-  {
-    label: 'Contact',
-    url: "contact",
-    active: true,
-  }
+
 ];
 
 
