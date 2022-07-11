@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+import { generateTextAtribs } from "../utils/generateTextAtribs";
 import Accordion from "./Accordion";
+import BorderBox from "./BorderBox";
 
 type Props = {
   width: number;
@@ -10,6 +12,10 @@ type Props = {
 };
 
 const Skill: React.FC<Props> = (props) => {
+
+  let [color, angle] = generateTextAtribs();
+
+
   const skillLineVariants = {
     visible: { pathLength: props.width, transition: { duration: 1 } },
     hidden: { pathLength: 0 },
@@ -17,17 +23,31 @@ const Skill: React.FC<Props> = (props) => {
 
   const isOpen = props.i === props.expanded;
 
+  const hoverVariants = {
+    hover: {
+      stroke: color,
+      color: color,
+    },
+    open: {
+      stroke: color,
+      color: color,
+    }
+  }
+
   return (
     <div className="content-center">
       <motion.div
-        className="flex text-center max-w-[90vw] m-auto px-5"
+        className="flex text-center max-w-[90vw] m-auto px-5 stroke-slate-200 text-slate-200"
         onClick={() => props.setExpanded(isOpen ? false : props.i)}
+        variants={hoverVariants}
+        whileHover="hover"
+        animate={isOpen ? "open" : ""}
       >
-        <div className="pr-4 py-1">{props.label}</div>
+        <div className="w-[7%]">{props.label}</div>
         <motion.svg
           height="50"
           width="100%"
-          className="stroke-slate-200 stroke-[10px] lg:stroke-[30px]"
+          className={`stroke-[10px] lg:stroke-[30px]`}
         >
           <line
             x1="15"
@@ -35,14 +55,12 @@ const Skill: React.FC<Props> = (props) => {
             x2="90%"
             y2="15"
             className="stroke-slate-500"
-            strokeLinecap="round"
           />
           <motion.line
             x1="15"
             y1="15"
             x2="90%"
             y2="15"
-            strokeLinecap="round"
             variants={skillLineVariants}
             initial="hidden"
             whileInView="visible"
@@ -57,10 +75,8 @@ const Skill: React.FC<Props> = (props) => {
         expanded={props.expanded}
         setExpanded={props.setExpanded}
       >
-        <div>
-          <div className="rounded-md p-4 text-slate-200 text-center">
-            Testing Testing Testing Testing Testing Testing Testing
-          </div>
+        <div className="p-5 m-auto text-center w-1/2">
+          <span>Testing Testing Testing Testing Testing Testing Testing</span>
           <div className="opacity-100 h-5 shadow-none"></div>
         </div>
       </Accordion>

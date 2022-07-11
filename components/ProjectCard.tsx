@@ -1,53 +1,54 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import BorderBox from "./BorderBox";
 
 type Props = {
-  jobTitle: string;
-  company: string;
-  location: string;
-  date: string;
+  title: string;
+  description: string;
+  hashtags: string[];
+  image: string;
 };
 
 const ProjectCard: React.FC<Props> = (props) => {
+
+
+  let style = {
+
+  }
   return (
-    <div className="card bg-base-100 shadow-sm image-lg hover:image-xl ">
-      <figure>
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+    <BorderBox>
+
+      <div className="border">
+        <Image className="w-full" src={props.image} alt="Mountain" layout="responsive" width="500" height="300" />
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2">{props.title}</div>
+          <p className="text-gray-700 text-base">
+            {props.description}
+          </p>
+        </div>
+        <div className="px-6 pt-4 pb-2">
+          {props.hashtags.map((hashtag, i) => (
+            <span key={i} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{hashtag}</span>
+          )
+          )}
         </div>
       </div>
-    </div>
+    </BorderBox>
   );
 };
 
 const ProjectList = () => {
   return (
-    <div>
-      <ul role="list" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row">
-        <ProjectCard
-          jobTitle="Data Analyst"
-          company="Bank of Queensland"
-          location="Melbourne, Victoria, Australia"
-          date="March, 2022 - Present"
-        />
-        <ProjectCard
-          jobTitle="Data Analyst"
-          company="Bank of Queensland"
-          location="Melbourne, Victoria, Australia"
-          date="March, 2022 - Present"
-        />
-        <ProjectCard
-          jobTitle="Data Analyst"
-          company="Bank of Queensland"
-          location="Melbourne, Victoria, Australia"
-          date="March, 2022 - Present"
-        />
-      </ul>
-    </div>
+    <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+
+      <ProjectCard
+        title={"copykitt"}
+        description={"A fullstack application which generates a tagline and keywords for a branding prompt"}
+        hashtags={['typescript', 'FastAPI', 'AWS Lambda', 'Vercel', 'NextJS', 'OpenAI']}
+        image={"/power-bi-dashboard.png"}
+      />
+
+    </div >
   );
 };
 

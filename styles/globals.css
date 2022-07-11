@@ -8,3 +8,33 @@ html * {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   max-width: 100vw;
 }
+
+.border-box {
+  display: flex;
+  position: relative;
+}
+
+.main-box,.shadow-box {
+  position: absolute;
+  border: 1px solid #000;
+}
+
+.main-box {
+  background-color: blue;
+  z-index: 3;
+}
+
+.shadow-box {
+  top: 10px;
+  left: 10px;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  
+}
+
+.main-box:hover {
+  margin-top: -10px;
+  margin-left: -10px;
+}
+

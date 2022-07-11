@@ -36,10 +36,11 @@ const TextHighlight: React.FC<Props> = ({ children, inView }) => {
     >
     <AnimatePresence>
       <motion.div
-        className={`z-5 absolute mt-[-8px] ml-[-8px] p-1 text-white m-[-2px]`}
+        className={`z-5 absolute flex mt-[-8px] ml-[-8px] p-1 text-white m-[-2px]`}
         variants={variants}
         whileHover="hover"
         animate={inView ? "hover" : ""}
+        drag
       >
         {children}
       </motion.div>
