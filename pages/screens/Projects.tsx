@@ -1,15 +1,20 @@
 
 import React from "react";
-import BorderBox from "../../components/BorderBox";
+import FadeIn from "../../components/FadeIn";
 import ProjectList from "../../components/ProjectCard";
 
 
+
+
+
 const Projects = () => {
+
     return (
         <div id="projects" className="min-h-screen bg-slate-600 p-8 w-screen">
-            <div className="m-auto w-[70vw] h-content">
+            <FadeIn className="m-auto w-[70vw] h-content"
+            >
                 <ProjectList></ProjectList>
-            </div>
+        </FadeIn>
         </div>
     );
 }

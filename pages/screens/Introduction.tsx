@@ -1,5 +1,6 @@
 // import AnimatedText from "../components/AnimatedText";
 import { motion } from "framer-motion";
+import FadeIn from "../../components/FadeIn";
 
 import TextHighlight from "../../components/TextHighlight";
 
@@ -17,13 +18,10 @@ const Introduction = () => {
 
   return (
     <div id="intro" className="flex w-screen min-h-screen bg-slate-700 p-8">
-      <motion.div
+      <FadeIn
         className="m-auto rounded-md border-white p-2 text-center w-4/5"
-        variants={variants}
-        whileInView="visible"
-        initial="hidden"
-        viewport={{ once: true }}
       >
+        <>
         <h1 className="text-3xl md:text-6xl text-slate-200 p-2 mb-5">
           <TextHighlight inView={true}>
             <span>Hi, my name is <br></br> Harrison</span>
@@ -35,7 +33,8 @@ const Introduction = () => {
           as a <TextHighlight inView={true}>Data Analyst</TextHighlight>. I am looking to move
           into the field of <TextHighlight inView={true}>Software Engineering</TextHighlight>.
         </p>
-      </motion.div>
+        </>
+      </FadeIn>
     </div>
   );
 };
