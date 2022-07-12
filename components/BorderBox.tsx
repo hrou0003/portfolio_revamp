@@ -17,7 +17,7 @@ const BorderBox: React.FC<Props> = ({ children }) => {
 
     return (
 
-        <div className="relative">
+        <div className="relative w-fit m-auto">
 
             <motion.div className="absolute flex bg-white mb-2 mr-2"
                 variants={variants}
@@ -25,7 +25,7 @@ const BorderBox: React.FC<Props> = ({ children }) => {
             >
                 {children}
             </motion.div>
-            <div className="bg-slate-900 ml-2 mt-2">
+            <div className="bg-slate-900 ml-2 mt-2 flex">
                 <div className="invisible">
                     {children}
                 </div>

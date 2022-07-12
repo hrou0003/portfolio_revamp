@@ -17,8 +17,7 @@ const ProjectCard: React.FC<Props> = (props) => {
   }
   return (
     <BorderBox>
-
-      <div className="border">
+      <div className="border w-[80vw] h-fit max-h-fit md:min-h-[70vh] md:w-[25vw] lg:w-[30vw]">
         <Image className="w-full" src={props.image} alt="Mountain" layout="responsive" width="500" height="300" />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{props.title}</div>
@@ -39,15 +38,20 @@ const ProjectCard: React.FC<Props> = (props) => {
 
 const ProjectList = () => {
   return (
-    <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+    <div className="p-1 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-[80vw]">
 
       <ProjectCard
         title={"copykitt"}
         description={"A fullstack application which generates a tagline and keywords for a branding prompt"}
-        hashtags={['typescript', 'FastAPI', 'AWS Lambda', 'Vercel', 'NextJS', 'OpenAI']}
-        image={"/power-bi-dashboard.png"}
+        hashtags={['Typescript', 'React', 'FastAPI', 'AWS Lambda', 'Vercel', 'NextJS', 'OpenAI']}
+        image={"/copykitt-preview.png"}
       />
-
+      <ProjectCard
+        title={"Todo List"}
+        description={"A dynamic todo list"}
+        hashtags={['Typescript', 'Context', 'React']}
+        image={"/copykitt-preview.png"}
+      />
     </div >
   );
 };
