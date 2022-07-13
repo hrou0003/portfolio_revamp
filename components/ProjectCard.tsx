@@ -17,7 +17,7 @@ const ProjectCard: React.FC<Props> = (props) => {
   }
   return (
     <BorderBox>
-      <div className="border w-[80vw] h-fit max-h-fit md:min-h-[70vh] md:w-[25vw] lg:w-[30vw]">
+      <div className="border w-[80vw] h-fit max-h-fit md:min-h-[60vh] md:w-[25vw] lg:w-[30vw]">
         <Image className="w-full" src={props.image} alt="Mountain" layout="responsive" width="500" height="300" />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{props.title}</div>
@@ -38,7 +38,7 @@ const ProjectCard: React.FC<Props> = (props) => {
 
 const ProjectList = () => {
   return (
-    <div className="p-1 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-[80vw]">
+    <div className="p-1 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-[80vw] gap-5 m-auto">
 
       <ProjectCard
         title={"copykitt"}
