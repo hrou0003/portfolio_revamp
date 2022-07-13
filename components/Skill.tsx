@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { generateTextAtribs } from "../utils/generateTextAtribs";
 import Accordion from "./Accordion";
 import BorderBox from "./BorderBox";
+import { useInView, InView } from 'react-intersection-observer';
+import { useState } from "react";
 
 type Props = {
   width: number;
@@ -12,6 +14,12 @@ type Props = {
 };
 
 const Skill: React.FC<Props> = (props) => {
+
+  const { inView, entry } = useInView({
+    trackVisibility: true
+  })
+
+  const [entered, setEntered] = useState(false)
 
   let [color, angle] = generateTextAtribs();
 
@@ -35,6 +43,17 @@ const Skill: React.FC<Props> = (props) => {
   }
 
   return (
+        <InView
+        as="div"
+        onChange={(inView, entry) => {
+          console.log("Inview:", inView, "entry:", entry)
+          if (inView === true) {
+            setEntered(true)
+          }
+        }}
+        root={null}
+        rootMargin="0px"
+        threshold={0.8}>
     <div className="content-center">
       <motion.div
         className="flex text-center max-w-[90vw] m-auto px-5 stroke-slate-200 text-slate-200"
@@ -63,7 +82,7 @@ const Skill: React.FC<Props> = (props) => {
             y2="15"
             variants={skillLineVariants}
             initial="hidden"
-            whileInView="visible"
+            animate={entered ? "visible" : "hidden"}
             className="stroke-[10px] lg:stroke-[30px]"
             viewport={{ once: true }}
           />
@@ -81,6 +100,7 @@ const Skill: React.FC<Props> = (props) => {
         </div>
       </Accordion>
     </div>
+    </InView>
   );
 };
 

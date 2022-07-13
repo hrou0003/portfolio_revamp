@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 type Props = {
-    children: JSX.Element;
+    children: JSX.Element | string;
 }
 
 const MovingBox: React.FC<Props> = ({ children }) => {
