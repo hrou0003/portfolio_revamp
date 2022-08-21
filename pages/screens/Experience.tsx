@@ -2,6 +2,7 @@ import ExperienceCard from "../../components/ExperienceCard";
 import { JobExperience, Education } from "../../components/Experience";
 import TextHighlight from "../../components/TextHighlight";
 import FadeIn from "../../components/FadeIn";
+import { AnimateTextBackground } from "../../components/TextBackground";
 
 const Experience = () => {
   return (
@@ -13,13 +14,13 @@ const Experience = () => {
         <>
         <div>
           <h1 className="text-slate-400 text-2xl pb-2">
-            <TextHighlight inView={true}>Work Experience</TextHighlight>
+            <AnimateTextBackground>Work Experience</AnimateTextBackground>
           </h1>
           <ExperienceCard experiences={JobExperience} />
         </div>
         <div>
           <h1 className="text-slate-400 text-2xl pb-2">
-            <TextHighlight inView={true}>Education</TextHighlight>
+            <AnimateTextBackground>Education</AnimateTextBackground>
           </h1>
           <ExperienceCard experiences={Education} />
         </div>

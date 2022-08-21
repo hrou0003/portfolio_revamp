@@ -12,7 +12,7 @@ const MobileNav = () => {
   });
 
   const variants = {
-    visible: { opacity: 1, x: 0},
+    visible: { opacity: 1, x: 0, type: 'spring', damping: 1000 },
     hidden: { opacity: 0, x: "100%" },
   };
 
@@ -27,6 +27,7 @@ const MobileNav = () => {
         className="fixed ml-[93vw] mt-[35vh] z-30 p-3"
         onClick={() => setOpen(!open)}
       >
+        {/* open mobile menu buttons */}
         {open ? (
           <FontAwesomeIcon icon={faXmark} fontSize="1.5rem" color="white" />
         ) : (
@@ -38,6 +39,7 @@ const MobileNav = () => {
         )}
       </div>
       <AnimatePresence>
+        {/* toggle mobile menu - dependent on button state */}
         {open ? (
           <motion.div
             key="modal"

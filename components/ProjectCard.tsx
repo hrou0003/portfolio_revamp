@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import BorderBox from "./BorderBox";
 
 type Props = {
@@ -7,6 +8,7 @@ type Props = {
   description: string;
   hashtags: string[];
   image: string;
+  url: string;
 };
 
 const ProjectCard: React.FC<Props> = (props) => {
@@ -17,7 +19,8 @@ const ProjectCard: React.FC<Props> = (props) => {
   }
   return (
     <BorderBox>
-      <div className="border w-[80vw] h-fit max-h-fit md:min-h-[60vh] md:w-[25vw] lg:w-[30vw]">
+      <Link href={props.url}>
+      <div className="border w-[80vw] h-fit max-h-fit md:min-h-[60vh] md:w-[25vw] lg:w-[30vw]" >
         <Image className="w-full" src={props.image} alt="Mountain" layout="responsive" width="500" height="300" />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{props.title}</div>
@@ -32,6 +35,7 @@ const ProjectCard: React.FC<Props> = (props) => {
           )}
         </div>
       </div>
+      </Link>
     </BorderBox>
   );
 };
@@ -45,12 +49,14 @@ const ProjectList = () => {
         description={"A fullstack application which generates a tagline and keywords for a branding prompt"}
         hashtags={['Typescript', 'React', 'FastAPI', 'AWS Lambda', 'Vercel', 'NextJS', 'OpenAI']}
         image={"/copykitt-preview.png"}
+        url={"https://copykitt-k71udul7v-hrou0003.vercel.app/"}
       />
       <ProjectCard
         title={"Todo List"}
         description={"A dynamic todo list"}
         hashtags={['Typescript', 'Context', 'React']}
         image={"/copykitt-preview.png"}
+        url={""}
       />
     </div >
   );

@@ -17,9 +17,7 @@ const TextHighlight: React.FC<Props> = ({ children, inView }) => {
 
   const variants = {
     hover: {
-      rotate: angle,
-      backgroundColor: color,
-      text: "white"
+       backgroundColor: ['hsl(0, 100, 50)', 'hsl(-120, 100, 50)']
     },
     initial: {
       backgroundColor: color,
@@ -45,7 +43,6 @@ const TextHighlight: React.FC<Props> = ({ children, inView }) => {
         {children}
       </motion.div>
     </AnimatePresence>
-      <span className="text-transparent">{children}</span>
     </div>
   );
 };

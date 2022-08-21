@@ -1,6 +1,8 @@
 // import AnimatedText from "../components/AnimatedText";
-import { motion } from "framer-motion";
+import { LayoutGroup, motion } from "framer-motion";
 import FadeIn from "../../components/FadeIn";
+import { ShadowBox } from "../../components/ShadowBox";
+import { AnimateTextBackground } from "../../components/TextBackground";
 
 import TextHighlight from "../../components/TextHighlight";
 
@@ -21,19 +23,22 @@ const Introduction = () => {
       <FadeIn
         className="m-auto rounded-md border-white p-2 text-center w-4/5 lg:w-3/5"
       >
+        <LayoutGroup id="intro">
+
         <>
         <h1 className="text-3xl md:text-6xl text-slate-200 p-2 mb-5">
-          <TextHighlight inView={true}>
+          <ShadowBox>
             <span>Hi, my name is <br></br> Harrison</span>
-          </TextHighlight>
+          </ShadowBox>
         </h1>
         <p className="relative text-slate-400 text-lg md:text-3xl mx-auto z-5">
           I&apos;m a graduate in applied mathematics and computer
           science from Monash University currently working at Bank of Queensland
-          as a <TextHighlight inView={true}>Data Analyst</TextHighlight>. I have a passion for all things <TextHighlight inView={true}>Software</TextHighlight> 
-          and am looking to move into the field of <TextHighlight inView={true}>Software Engineering</TextHighlight>.
+          as a <AnimateTextBackground>Data Analyst</AnimateTextBackground>. I have a passion for all things <AnimateTextBackground>Software</AnimateTextBackground>&nbsp; 
+          and am looking to move into the field of <AnimateTextBackground >Software Engineering</AnimateTextBackground>.
         </p>
         </>
+        </LayoutGroup>
       </FadeIn>
     </div>
   );

@@ -7,6 +7,7 @@ import { faChevronCircleLeft, faChevronLeft, faFile } from '@fortawesome/free-so
 import TextHighlight from '../TextHighlight';
 import Contacts from '../Contacts';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { ShadowBox } from '../ShadowBox';
 
 const MenuItems = [
   {
@@ -63,11 +64,11 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick, setClosed }) 
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
         >
-          <TextHighlight inView={selected ? true : false}>
+          <ShadowBox >
             <span className='z-30'>
               {text}
             </span>
-          </TextHighlight>
+          </ShadowBox>
         </motion.div>
 
       </Link>
