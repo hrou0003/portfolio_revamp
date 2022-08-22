@@ -1,10 +1,12 @@
 // import AnimatedText from "../components/AnimatedText";
 import { LayoutGroup, motion } from "framer-motion";
 import FadeIn from "../../components/FadeIn";
+import PunchedText from "../../components/TextAnimations/PunchedText";
 import { ShadowBox } from "../../components/ShadowBox";
-import { AnimateTextBackground } from "../../components/TextBackground";
+import { AnimateTextBackground } from "../../components/TextAnimations/TextBackground";
 
-import TextHighlight from "../../components/TextHighlight";
+import TextHighlight from "../../components/TextAnimations/TextHighlight";
+import TextCycle, { TextDrop } from "../../components/TextAnimations/TextDrop";
 
 const Introduction = () => {
   const variants = {
@@ -27,9 +29,8 @@ const Introduction = () => {
 
         <>
         <h1 className="text-3xl md:text-6xl text-slate-200 p-2 mb-5">
-          <ShadowBox>
-            <span>Hi, my name is <br></br> Harrison</span>
-          </ShadowBox>
+          <PunchedText text="Harrison" textColor="rgb(51 65 85)"/>
+          <h1>ROUILLARD</h1>
         </h1>
         <p className="relative text-slate-400 text-lg md:text-3xl mx-auto z-5">
           I&apos;m a graduate in applied mathematics and computer

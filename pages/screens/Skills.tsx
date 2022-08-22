@@ -3,9 +3,9 @@ import Skill from "../../components/Skill";
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPython, faAws, faJs, faLinux, faGolang, faGit } from "@fortawesome/free-brands-svg-icons";
-import TextHighlight from "../../components/TextHighlight";
+import TextHighlight from "../../components/TextAnimations/TextHighlight";
 import FadeIn from "../../components/FadeIn";
-import { AnimateTextBackground } from "../../components/TextBackground";
+import { AnimateTextBackground } from "../../components/TextAnimations/TextBackground";
 
 const Skills: React.FC = () => {
 

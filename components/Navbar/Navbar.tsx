@@ -4,7 +4,7 @@ import { motion,  useViewportScroll } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft, faChevronLeft, faFile } from '@fortawesome/free-solid-svg-icons';
-import TextHighlight from '../TextHighlight';
+import TextHighlight from '../TextAnimations/TextHighlight';
 import Contacts from '../Contacts';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { ShadowBox } from '../ShadowBox';
