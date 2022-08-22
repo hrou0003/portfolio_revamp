@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { generateTextAtribs } from "../utils/generateTextAtribs";
+import { generateTextAtribs } from "../../utils/generateTextAtribs";
 
 type Props = {
   color?: string;

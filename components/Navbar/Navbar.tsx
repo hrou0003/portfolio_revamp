@@ -8,6 +8,7 @@ import TextHighlight from '../TextAnimations/TextHighlight';
 import Contacts from '../Contacts';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { ShadowBox } from '../ShadowBox';
+import UnderlineSlide from '../TextAnimations/UnderlineSlide';
 
 const MenuItems = [
   {
@@ -64,11 +65,11 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick, setClosed }) 
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
         >
-          <ShadowBox >
+          <UnderlineSlide active={selected}>
             <span className='z-30'>
               {text}
             </span>
-          </ShadowBox>
+          </UnderlineSlide >
         </motion.div>
 
       </Link>
@@ -111,8 +112,8 @@ const Navbar: React.FC<NavProps> = (props) => {
 
 
   let mainClass = props.mobile ?
-    "p-4 my-auto opacity-30 text-slate-200 z-30 text-right" :
-    "fixed p-4 opacity-30 mt-40 text-slate-200 z-10"
+    "p-4 my-auto text-slate-200 z-30 text-right" :
+    "fixed p-4 mt-40 text-slate-200 z-10"
 
   /** update the onChange callback to call for `update()` **/
   React.useEffect(() => {
