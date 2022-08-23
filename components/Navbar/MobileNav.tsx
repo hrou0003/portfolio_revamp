@@ -12,7 +12,7 @@ const MobileNav = () => {
   });
 
   const variants = {
-    visible: { opacity: 1, x: 0, type: 'spring', damping: 1000 },
+    visible: { opacity: 1, x: 0, type: 'spring', damping: 100 },
     hidden: { opacity: 0, x: "100%" },
   };
 
@@ -24,7 +24,7 @@ const MobileNav = () => {
     <div>
       <div className="text-white">{open}</div>
       <div
-        className="fixed ml-[93vw] mt-[35vh] z-30 p-3"
+        className="fixed ml-[93vw] mr-4 mt-[35vh] z-30 p-3"
         onClick={() => setOpen(!open)}
       >
         {/* open mobile menu buttons */}
@@ -45,6 +45,7 @@ const MobileNav = () => {
             key="modal"
             variants={variants}
             whileInView="visible"
+            animate="visible"
             initial="hidden"
             exit="hidden"
             className="fixed z-10 w-screen h-screen bg-slate-700"
