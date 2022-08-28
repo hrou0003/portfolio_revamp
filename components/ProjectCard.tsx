@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+<<<<<<< Updated upstream
+=======
+import Link from "next/link";
+import BorderBox from "./BorderBox";
+import Tabbed from "./Tabbed";
+>>>>>>> Stashed changes
 
 type Props = {
     jobTitle: string;
@@ -9,6 +15,7 @@ type Props = {
 }
 
 const ProjectCard: React.FC<Props> = (props) => {
+<<<<<<< Updated upstream
     return (
         <motion.li whileHover={{ scale: 1.1 }} className="py-3 sm:py-4">
             <div className="flex items-center space-x-4">
@@ -34,9 +41,52 @@ const ProjectCard: React.FC<Props> = (props) => {
         </motion.li>
     )
 }
+=======
+
+
+  let style = {
+
+  }
+  return (
+    <BorderBox
+      about={<div className="border w-[80vw] h-fit max-h-fit md:min-h-[60vh] md:w-[25vw] lg:w-[30vw]" >
+        <Image className="w-full" src={props.image} alt="Mountain" layout="responsive" width="500" height="300" />
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2">{props.title}</div>
+          <p className="text-gray-700 text-base">
+            {props.description}
+            this is the about section
+          </p>
+        </div>
+        <div className="px-6 pt-4 pb-2">
+          {props.hashtags.map((hashtag, i) => (
+            <span key={i} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{hashtag}</span>
+          )
+          )}
+        </div>
+      </div>}
+      code={<div className="border w-[80vw] h-fit max-h-fit md:min-h-[60vh] md:w-[25vw] lg:w-[30vw]" >
+        <Image className="w-full" src={props.image} alt="Mountain" layout="responsive" width="500" height="300" />
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2">{props.title}</div>
+          <p className="text-gray-700 text-base">
+            {props.description}
+          </p>
+        </div>
+        <div className="px-6 pt-4 pb-2">
+          {props.hashtags.map((hashtag, i) => (
+            <span key={i} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{hashtag}</span>
+          )
+          )}
+        </div>
+      </div>}/>
+  );
+};
+>>>>>>> Stashed changes
 
 const ProjectList = () => {
 
+<<<<<<< Updated upstream
     return (
         <div className="p-4 m-auto max-w-lg bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div className="flex justify-between items-center mb-4">
@@ -52,5 +102,25 @@ const ProjectList = () => {
         </div>
     )
 }
+=======
+      <ProjectCard
+        title={"copykitt"}
+        description={"A fullstack application which generates a tagline and keywords for a branding prompt"}
+        hashtags={['Typescript', 'React', 'FastAPI', 'AWS Lambda', 'Vercel', 'NextJS', 'OpenAI']}
+        image={"/copykitt-preview.png"}
+        url={"https://copykitt-k71udul7v-hrou0003.vercel.app/"}
+      />
+      <ProjectCard
+        title={"Todo List"}
+        description={"A dynamic todo list"}
+        hashtags={['Typescript', 'Context', 'React']}
+        image={"/copykitt-preview.png"}
+        url={""}
+      />
+      <Tabbed />
+    </div >
+  );
+};
+>>>>>>> Stashed changes
 
 export default ProjectList;
