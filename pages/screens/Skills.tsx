@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPython, faAws, faJs, faLinux, faGolang, faGit } from "@fortawesome/free-brands-svg-icons";
 import TextHighlight from "../../components/TextAnimations/TextHighlight";
-import FadeIn from "../../components/FadeIn";
+import FadeIn from "../../components/Animations/FadeIn";
 import { AnimateTextBackground } from "../../components/TextAnimations/TextBackground";
 
 const Skills: React.FC = () => {

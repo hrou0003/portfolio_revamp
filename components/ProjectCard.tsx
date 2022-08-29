@@ -1,16 +1,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 import Link from "next/link";
-import BorderBox from "./BorderBox";
-import Tabbed from "./Tabbed";
->>>>>>> Stashed changes
-=======
-import Link from "next/link";
-import BorderBox from "./BorderBox";
->>>>>>> 09f7cdad74e6c57b99072825c958e5bd5adfc0a7
+import BorderBox from "./Animations/BorderBox";
+import CardFlip from "./Animations/CardFlip";
 
 type Props = {
   title: string;
@@ -21,103 +13,14 @@ type Props = {
 };
 
 const ProjectCard: React.FC<Props> = (props) => {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    return (
-        <motion.li whileHover={{ scale: 1.1 }} className="py-3 sm:py-4">
-            <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0">
-                    {/* <Image layout='fill' className="w-8 h-8 rounded-full" src="https://media-exp2.licdn.com/dms/image/C560BAQH1Z5EwGQt87A/company-logo_100_100/0/1627856787021?e=1665014400&v=beta&t=b2vTXrvLE1URyCbmPMRCuTgKJChIY-qPnyfNawvy5jc" alt="Neil image" /> */}
-                </div>
-                <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                        {props.jobTitle}
-                    </p>
-                    <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                        {props.company}
-                    </p>
-                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        {props.location}
-                    </div>
-                </div>
-
-            </div>
-            <div className="text-white">
-                Took of visualisation and reporting did lots of other things
-            </div>
-        </motion.li>
-    )
-}
-=======
 
 
-  let style = {
-
-  }
-  return (
-    <BorderBox
-      about={<div className="border w-[80vw] h-fit max-h-fit md:min-h-[60vh] md:w-[25vw] lg:w-[30vw]" >
-        <Image className="w-full" src={props.image} alt="Mountain" layout="responsive" width="500" height="300" />
-        <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{props.title}</div>
-          <p className="text-gray-700 text-base">
-            {props.description}
-            this is the about section
-          </p>
-        </div>
-        <div className="px-6 pt-4 pb-2">
-          {props.hashtags.map((hashtag, i) => (
-            <span key={i} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{hashtag}</span>
-          )
-          )}
-        </div>
-      </div>}
-      code={<div className="border w-[80vw] h-fit max-h-fit md:min-h-[60vh] md:w-[25vw] lg:w-[30vw]" >
-        <Image className="w-full" src={props.image} alt="Mountain" layout="responsive" width="500" height="300" />
-        <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{props.title}</div>
-          <p className="text-gray-700 text-base">
-            {props.description}
-          </p>
-        </div>
-        <div className="px-6 pt-4 pb-2">
-          {props.hashtags.map((hashtag, i) => (
-            <span key={i} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{hashtag}</span>
-          )
-          )}
-        </div>
-      </div>}/>
-  );
-};
->>>>>>> Stashed changes
-=======
->>>>>>> 09f7cdad74e6c57b99072825c958e5bd5adfc0a7
-
-
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    return (
-        <div className="p-4 m-auto max-w-lg bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <div className="flex justify-between items-center mb-4">
-                <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Job Experience</h5>
-            </div>
-            <div className="flow-root">
-                <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-                    <ProjectCard jobTitle="Data Analyst" company="Bank of Queensland" location="Melbourne, Victoria, Australia" date="March, 2022 - Present" />
-                    <ProjectCard jobTitle="Data Analyst" company="Bank of Queensland" location="Melbourne, Victoria, Australia" date="March, 2022 - Present" />
-                    <ProjectCard jobTitle="Data Analyst" company="Bank of Queensland" location="Melbourne, Victoria, Australia" date="March, 2022 - Present" />
-                </ul>
-            </div>
-        </div>
-    )
-}
-=======
-=======
   let style = {
 
   }
   return (
     <BorderBox>
+      <CardFlip frontComponent={
       <Link href={props.url}>
       <div className="border w-[80vw] h-fit max-h-fit md:min-h-[60vh] md:w-[25vw] lg:w-[30vw]" >
         <Image className="w-full" src={props.image} alt="Mountain" layout="responsive" width="500" height="300" />
@@ -134,7 +37,26 @@ const ProjectCard: React.FC<Props> = (props) => {
           )}
         </div>
       </div>
-      </Link>
+      </Link>}
+      backComponent={
+      <Link href={props.url}>
+      <div className="border w-[80vw]  bg-slate-300 h-fit max-h-fit md:min-h-[60vh] md:w-[25vw] lg:w-[30vw]" >
+        <Image className="w-full" src={props.image} alt="Mountain" layout="responsive" width="500" height="300" />
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2">{props.title}</div>
+          <p className="text-gray-700 text-base">
+            {props.description}
+          </p>
+        </div>
+        <div className="px-6 pt-4 pb-2">
+          {props.hashtags.map((hashtag, i) => (
+            <span key={i} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{hashtag}</span>
+          )
+          )}
+        </div>
+      </div>
+      </Link>}
+      />
     </BorderBox>
   );
 };
@@ -143,7 +65,6 @@ const ProjectList = () => {
   return (
     <div className="p-1 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-[80vw] gap-5 m-auto">
 
->>>>>>> 09f7cdad74e6c57b99072825c958e5bd5adfc0a7
       <ProjectCard
         title={"copykitt"}
         description={"A fullstack application which generates a tagline and keywords for a branding prompt"}
@@ -158,16 +79,8 @@ const ProjectList = () => {
         image={"/copykitt-preview.png"}
         url={""}
       />
-<<<<<<< HEAD
-      <Tabbed />
     </div >
   );
 };
->>>>>>> Stashed changes
-=======
-    </div >
-  );
-};
->>>>>>> 09f7cdad74e6c57b99072825c958e5bd5adfc0a7
 
 export default ProjectList;

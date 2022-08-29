@@ -1,6 +1,6 @@
 
 import React from "react";
-import FadeIn from "../../components/FadeIn";
+import FadeIn from "../../components/Animations/FadeIn";
 import ProjectList from "../../components/ProjectCard";
 
 

@@ -7,7 +7,7 @@ import { faChevronCircleLeft, faChevronLeft, faFile } from '@fortawesome/free-so
 import TextHighlight from '../TextAnimations/TextHighlight';
 import Contacts from '../Contacts';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { ShadowBox } from '../ShadowBox';
+import { ShadowBox } from '../Animations/ShadowBox';
 import UnderlineSlide from '../TextAnimations/UnderlineSlide';
 
 const MenuItems = [

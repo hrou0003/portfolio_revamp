@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { generateTextAtribs } from "../utils/generateTextAtribs";
 import Accordion from "./Accordion";
-import BorderBox from "./BorderBox";
+import BorderBox from "./Animations/BorderBox";
 import { useInView, InView } from 'react-intersection-observer';
 import { useState } from "react";
 

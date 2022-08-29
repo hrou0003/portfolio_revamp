@@ -1,8 +1,8 @@
 // import AnimatedText from "../components/AnimatedText";
 import { LayoutGroup, motion } from "framer-motion";
-import FadeIn from "../../components/FadeIn";
+import FadeIn from "../../components/Animations/FadeIn";
 import PunchedText from "../../components/TextAnimations/PunchedText";
-import { ShadowBox } from "../../components/ShadowBox";
+import { ShadowBox } from "../../components/Animations/ShadowBox";
 import { AnimateTextBackground } from "../../components/TextAnimations/TextBackground";
 
 import TextHighlight from "../../components/TextAnimations/TextHighlight";

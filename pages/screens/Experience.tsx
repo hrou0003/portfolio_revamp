@@ -1,7 +1,7 @@
 import ExperienceCard from "../../components/ExperienceCard";
 import { JobExperience, Education } from "../../components/Experience";
 import TextHighlight from "../../components/TextAnimations/TextHighlight";
-import FadeIn from "../../components/FadeIn";
+import FadeIn from "../../components/Animations/FadeIn";
 import { AnimateTextBackground } from "../../components/TextAnimations/TextBackground";
 
 const Experience = () => {
