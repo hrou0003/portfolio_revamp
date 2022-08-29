@@ -3,7 +3,12 @@ import React, { useState } from 'react';
 import { motion,  useViewportScroll } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleLeft, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronCircleLeft, faChevronLeft, faFile } from '@fortawesome/free-solid-svg-icons';
+import TextHighlight from '../TextAnimations/TextHighlight';
+import Contacts from '../Contacts';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { ShadowBox } from '../ShadowBox';
+import UnderlineSlide from '../TextAnimations/UnderlineSlide';
 
 const MenuItems = [
   {
@@ -26,11 +31,7 @@ const MenuItems = [
     url: "projects",
     active: true,
   },
-  {
-    label: 'Contact',
-    url: "contact",
-    active: true,
-  }
+
 ];
 
 
@@ -64,11 +65,15 @@ const MenuItem: React.FC<Props> = ({ url, text, selected, onClick, setClosed }) 
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
         >
-          {text}
+          <UnderlineSlide active={selected}>
+            <span className='z-30'>
+              {text}
+            </span>
+          </UnderlineSlide >
         </motion.div>
 
       </Link>
-      {selected && (
+      {false && (
         <motion.div
           layoutId="underline" className="float-right pl-4 mt-1">
           <FontAwesomeIcon icon={faChevronLeft} className="text-2xl md:text-xl lg:text-3xl" color="white" />
@@ -107,8 +112,8 @@ const Navbar: React.FC<NavProps> = (props) => {
 
 
   let mainClass = props.mobile ?
-    "p-4 my-auto opacity-30 text-slate-200 z-30 text-right" :
-    "fixed p-4 opacity-30 mt-40 text-slate-200 z-10"
+    "p-4 my-auto text-slate-200 z-30 text-right" :
+    "fixed p-4 mt-40 text-slate-200 z-10"
 
   /** update the onChange callback to call for `update()` **/
   React.useEffect(() => {
@@ -137,7 +142,7 @@ const Navbar: React.FC<NavProps> = (props) => {
     >
       <ul className="wrapper">
         {MenuItems.map((el: any, i: number) => (
-          <li key={i} className="">
+          <li key={i} className="my-3">
             <MenuItem
               url={el.url}
               text={el.label}
@@ -148,6 +153,11 @@ const Navbar: React.FC<NavProps> = (props) => {
             />
           </li>
         ))}
+      <li className='grid grid-cols-3'>
+          <a href="https://www.github.com/hrou0003" target="_"><FontAwesomeIcon icon={faGithub} fontSize="2rem" color='white'/></a>
+          <a href="https://www.linkedin.com/in/harrison-rouillard-295260209/"><FontAwesomeIcon icon={faLinkedin} fontSize="2rem" color='white'/></a>
+          <a href="www.github.com/hrou0003"><FontAwesomeIcon icon={faFile} fontSize="2rem" color='white'/></a>
+      </li>
       </ul>
     </motion.div>
   )
