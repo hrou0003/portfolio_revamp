@@ -12,7 +12,7 @@ const Experience = () => {
     >
       <FadeIn className="m-auto max-w-[60vw] grid grid-cols-1 md:grid-cols-2 md:gap-20">
         <>
-        <div>
+        <div className="m-auto">
           <h1 className="text-slate-400 text-2xl pb-2">
             <AnimateTextBackground>Work Experience</AnimateTextBackground>
           </h1>
